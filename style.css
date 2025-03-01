@@ -1,0 +1,293 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #8BC34A, #689F38); /* Green gradient background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #444;
+    padding: 1.5em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Horizontally align items */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the logo image */
+header img {
+    max-height: 75px; /* Adjust the height as needed */
+    margin-right: 20px; /* Add some spacing between logo and title */
+}
+
+nav {
+    background-color: rgba(85, 139, 47, 0.9); /* Dark green nav */
+    color: white;
+    padding: 0.75em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75em 1.25em;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* AI Assistant Styles */
+.ai-chat {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(249, 249, 249, 0.9);
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chat-log {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    word-wrap: break-word;
+    position: relative; /* For positioning the copy button */
+}
+
+.message.user {
+    background-color: #e2f7cb;
+    text-align: right;
+}
+
+.message.assistant {
+    background-color: #e6e6e6;
+    text-align: left;
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 5px; /* Space between copy and download */
+}
+
+.message:hover .copy-button {
+    opacity: 1;
+}
+
+.message:hover .download-button {
+    opacity: 1;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.input-area button {
+    padding: 10px 14px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green send button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+    background-color: #388E3C;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+    background-color: rgba(85, 139, 47, 0.9); /* Dark green footer */
+    color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Editor Styles */
+#text-editor {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#text-editor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.text-editor-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.editor-area {
+    flex-grow: 1;
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.editor-toolbar button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editor-toolbar button:hover {
+    background-color: #388E3C;
+}
+
+.editor-toolbar input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.editor-toolbar label {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editor-toolbar label:hover {
+    background-color: #388E3C;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ai-chat {
+        width: 95%;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area input[type="text"] {
+        margin-bottom: 10px;
+    }
+
+    .input-area button {
+        margin-left: 0;
+    }
+}
+
+/* Responsive Design for Text Editor */
+@media (max-width: 768px) {
+    .text-editor-container {
+        width: 95%;
+    }
+}

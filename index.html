@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truelight AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="AISES Logo.png" alt="AISES AI Logo">
+        <h1>AISES AI</h1>
+    </header>
+
+    <nav>
+        <a href="#ai-assistant">AI Assistant</a>
+    </nav>
+
+    <main>
+        <section id="ai-assistant">
+            <h2>AI Assistant</h2>
+            <div class="ai-chat">
+                <div id="chat-log"></div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Ask me anything...">
+                    <button onclick="sendMessage()">Send</button>
+                    <button onclick="resetAI()">Reset AI</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="text-editor">
+            <h2>Text Editor</h2>
+            <div class="text-editor-container">
+                <div id="editor" contenteditable="true" class="editor-area">
+                    Edit AI responses here...
+                </div>
+                <div class="editor-toolbar">
+                    <button onclick="formatText('bold')"><b>Bold</b></button>
+                    <button onclick="formatText('italic')"><i>Italic</i></button>
+                    <button onclick="formatText('underline')"><u>Underline</u></button>
+                    <button onclick="formatText('insertUnorderedList')">List</button>
+                    <button onclick="formatText('justifyLeft')">Left</button>
+                    <button onclick="formatText('justifyCenter')">Center</button>
+                    <button onclick="formatText('justifyRight')">Right</button>
+                    <!-- Image upload button -->
+                    <label for="imageUpload">Add Image</label>
+                    <input type="file" id="imageUpload" accept="image/*" onchange="addImageToEditor()">
+                    <button onclick="downloadEditedText()">Download PDF</button>
+                    <button onclick="copyEditedText()">Copy Text</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Truelight AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
